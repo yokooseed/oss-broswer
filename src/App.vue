@@ -10,7 +10,11 @@ export default {
   name: 'App',
   components: {
     HelloWorld
-  }
+  },
+  created() {
+    console.log('created')
+    this.http.test("www.baidu.com")
+  },
 }
 </script>
 

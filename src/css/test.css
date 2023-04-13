@@ -1,0 +1,737 @@
+/* 登录 */
+
+position: relative;
+width: 1440px;
+height: 900px;
+
+background: #FFFFFF;
+
+
+/* undraw_Exciting_news_re_y1iw 2 */
+
+position: absolute;
+width: 535px;
+height: 674px;
+left: 878px;
+top: 162px;
+
+background: url(undraw_Exciting_news_re_y1iw.png);
+
+
+/* Group 3 */
+
+position: absolute;
+width: 1082px;
+height: 1082px;
+left: -175px;
+top: -18px;
+
+opacity: 0.07;
+
+
+/* LOGO */
+
+position: absolute;
+width: 1082px;
+height: 1082px;
+left: -175px;
+top: -18px;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 0.05%;
+right: -0.05%;
+top: 0.05%;
+bottom: -0.05%;
+
+
+
+/* Group 1 */
+
+position: absolute;
+width: 937.8px;
+height: 748.33px;
+left: 69.29px;
+top: 141.04px;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 53.96%;
+right: 6.92%;
+top: 40.59%;
+bottom: 20.29%;
+
+background: #84E9F5;
+
+
+/* Vector */
+
+position: absolute;
+left: 6.4%;
+right: 26.19%;
+top: 13.04%;
+bottom: 17.8%;
+
+background: #52459F;
+
+
+/* Vector */
+
+position: absolute;
+left: 19.08%;
+right: 70%;
+top: 29.8%;
+bottom: 59.28%;
+
+background: #84E9F5;
+
+
+/* Frame 1000003279 */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 12px 29px;
+gap: 10px;
+
+position: absolute;
+left: 36.94%;
+right: 37.01%;
+top: 55.44%;
+bottom: 37%;
+
+
+
+/* Botton */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 12px 126px;
+gap: 10px;
+
+width: 316px;
+height: 44px;
+
+/* 品牌色 */
+background: #52459F;
+border-radius: 8px;
+transform: matrix(1, 0, 0, -1, 0, 0);
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* 登录 */
+
+width: 32px;
+height: 20px;
+
+/* Medium/Medium - bold */
+font-family: 'Source Sans Pro';
+font-style: normal;
+font-weight: 700;
+font-size: 16px;
+line-height: 20px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #FFFFFF;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Frame 1000003307 */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 4px 29px;
+gap: 10px;
+
+position: absolute;
+height: 48px;
+left: 37.01%;
+right: 36.94%;
+top: calc(50% - 48px/2 + 9px);
+
+
+
+/* Botton */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 12px 24px;
+gap: 120px;
+
+width: 316px;
+height: 40px;
+
+/* 图标底色 */
+background: #ECEFF8;
+border-radius: 8px;
+transform: matrix(1, 0, 0, -1, 0, 0);
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Frame 1000003311 */
+
+width: 84px;
+height: 16px;
+
+transform: matrix(1, 0, 0, -1, 0, 0);
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* 请输入验证码 */
+
+position: absolute;
+width: 84px;
+height: 16px;
+left: 0px;
+top: 0px;
+
+/* Small */
+font-family: 'FZLanTingHeiS-R-GB';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 16px;
+/* identical to box height */
+display: flex;
+align-items: center;
+text-align: center;
+
+/* 图标线形 */
+color: #BDBCDD;
+
+
+
+/* Frame 1000003310 */
+
+width: 70px;
+height: 16px;
+
+transform: matrix(1, 0, 0, -1, 0, 0);
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* 获取验证码 */
+
+position: absolute;
+width: 70px;
+height: 16px;
+left: 0px;
+top: 0px;
+
+/* Small */
+font-family: 'FZLanTingHeiS-R-GB';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 16px;
+/* identical to box height */
+display: flex;
+align-items: center;
+text-align: right;
+
+/* 品牌色 */
+color: #52459F;
+
+
+
+/* Frame 1000003308 */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 4px 29px;
+gap: 10px;
+
+position: absolute;
+height: 48px;
+left: 37.01%;
+right: 36.94%;
+top: calc(50% - 48px/2 - 39px);
+
+
+
+/* Botton */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 12px 24px;
+gap: 10px;
+
+width: 316px;
+height: 40px;
+
+/* 图标底色 */
+background: #ECEFF8;
+border-radius: 8px;
+transform: matrix(1, 0, 0, -1, 0, 0);
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Frame 1000003312 */
+
+width: 84px;
+height: 16px;
+
+transform: matrix(1, 0, 0, -1, 0, 0);
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* 请输入手机号 */
+
+position: absolute;
+width: 84px;
+height: 16px;
+left: 0px;
+top: 0px;
+
+/* Small */
+font-family: 'FZLanTingHeiS-R-GB';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 16px;
+/* identical to box height */
+display: flex;
+align-items: center;
+text-align: center;
+
+/* 图标线形 */
+color: #BDBCDD;
+
+
+
+/* Frame 1000003306 */
+
+position: absolute;
+left: 36.94%;
+right: 37.01%;
+top: 63%;
+bottom: 34.33%;
+
+
+
+/* 密码登录 */
+
+position: absolute;
+left: 12%;
+right: 72%;
+top: 12.5%;
+bottom: 12.5%;
+
+/* Small */
+font-family: 'FZLanTingHeiS-R-GB';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 16px;
+
+/* 文字深色 */
+color: #374151;
+
+
+
+/* 立即注册 */
+
+position: absolute;
+left: 72%;
+right: 12%;
+top: 12.5%;
+bottom: 12.5%;
+
+/* Small */
+font-family: 'FZLanTingHeiS-R-GB';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 16px;
+
+/* 文字深色 */
+color: #374151;
+
+
+
+/* Frame 1000003277 */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 5px 29px;
+gap: 16px;
+
+position: absolute;
+width: 375px;
+height: 34px;
+left: 533px;
+top: 305px;
+
+
+
+/* 全部 */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 36px 75px;
+gap: 10px;
+
+width: 72px;
+height: 24px;
+
+/* 图标线形 */
+background: #BDBCDD;
+border-radius: 6px;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* 全部 */
+
+width: 42px;
+height: 16px;
+
+/* Small */
+font-family: 'FZLanTingHeiS-R-GB';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 16px;
+/* identical to box height */
+
+/* 文字深色 */
+color: #374151;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* 全部 */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 36px 75px;
+gap: 10px;
+
+width: 72px;
+height: 24px;
+
+/* 图标底色 */
+background: #ECEFF8;
+border-radius: 6px;
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* 全部 */
+
+width: 28px;
+height: 16px;
+
+/* Small */
+font-family: 'FZLanTingHeiS-R-GB';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 16px;
+/* identical to box height */
+
+/* 图标线形 */
+color: #BDBCDD;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Frame 1000003317 */
+
+position: absolute;
+width: 102px;
+height: 24px;
+left: 562px;
+top: 229px;
+
+
+
+/* 欢迎使用 */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+font-family: 'FZLanTingHeiS-B-GB';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 23px;
+
+/* 文字深色 */
+color: #374151;
+
+
+
+/* Frame 1000003316 */
+
+position: absolute;
+width: 127px;
+height: 20px;
+left: 563px;
+top: 259px;
+
+
+
+/* 对象存储平台 */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+font-family: 'FZLanTingHeiS-B-GB';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 23px;
+
+/* 文字深色 */
+color: #374151;
+
+
+
+/* Frame 1000003318 */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 4px 29px;
+gap: 10px;
+
+position: absolute;
+width: 374px;
+height: 48px;
+left: 533px;
+top: 339px;
+
+
+
+/* Botton */
+
+box-sizing: border-box;
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 12px 24px;
+gap: 10px;
+
+width: 316px;
+height: 40px;
+
+/* 图标线形 */
+background: #BDBCDD;
+border: 1px solid #52459F;
+border-radius: 8px;
+transform: matrix(1, 0, 0, -1, 0, 0);
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Frame 1000003313 */
+
+width: 131px;
+height: 16px;
+
+transform: matrix(1, 0, 0, -1, 0, 0);
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* 请输入公网/局域网IP */
+
+position: absolute;
+width: 131px;
+height: 16px;
+left: 0px;
+top: 0px;
+
+/* Small */
+font-family: 'FZLanTingHeiS-R-GB';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 16px;
+/* identical to box height */
+display: flex;
+align-items: center;
+text-align: center;
+
+/* 文字深色 */
+color: #374151;
+
+
+
+/* undraw_For_sale_re_egkk 1 */
+
+position: absolute;
+width: 149px;
+height: 90px;
+left: 729px;
+top: 253px;
+
+background: url(undraw_For_sale_re_egkk.png);
+
+
+/* Group 4 */
+
+position: absolute;
+width: 1082px;
+height: 1082px;
+left: 2246.92px;
+top: 519.16px;
+
+opacity: 0.07;
+transform: rotate(155.96deg);
+
+
+/* LOGO */
+
+position: absolute;
+width: 1082px;
+height: 1082px;
+left: 2246.92px;
+top: 519.16px;
+
+transform: rotate(155.96deg);
+
+
+/* Vector */
+
+position: absolute;
+left: 132%;
+right: -132%;
+top: 91.3%;
+bottom: -91.3%;
+
+transform: rotate(155.96deg);
+
+
+/* Group 1 */
+
+position: absolute;
+width: 937.8px;
+height: 748.33px;
+left: 1308.18px;
+top: 887.57px;
+
+transform: rotate(155.96deg);
+
+
+/* Vector */
+
+position: absolute;
+left: 66.25%;
+right: -5.38%;
+top: 76.24%;
+bottom: -15.36%;
+
+background: #84E9F5;
+transform: rotate(155.96deg);
+
+
+/* Vector */
+
+position: absolute;
+left: 120.9%;
+right: -88.31%;
+top: 82.03%;
+bottom: -51.19%;
+
+background: #52459F;
+transform: rotate(155.96deg);
+
+
+/* Vector */
+
+position: absolute;
+left: 102.49%;
+right: -13.41%;
+top: 71.88%;
+bottom: 17.2%;
+
+background: #84E9F5;
+transform: rotate(155.96deg);
