@@ -31,7 +31,7 @@ export default {
         // 获取被删除的桶列表
         getDeletedList: "bucket/delBuckets",
         // 恢复被删除的桶
-        recover: "bucket/recover",
+        recovery: "bucket/recover",
         // 添加桶的用户
         addUser: "bucket/user/add",
         // 获取桶的用户列表
@@ -57,10 +57,10 @@ export default {
         // 删除文件
         delete: "delete/delFile",
         // 恢复被删除的文件
-        recover: "delete/recoverFile",
+        recovery: "delete/recoverFile",
         // 冷备份
         coldBackup: "put/coldStore",
         // 冷备份恢复
-        codeBackupRecover: "put/coldGet",
+        codeBackupRecovery: "put/coldGet",
     }
 }
