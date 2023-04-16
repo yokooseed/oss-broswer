@@ -19,9 +19,6 @@ export const dialogStore = defineStore('dialog', {
             this.data.content = content
             this.data.show = true
         },
-        loadComponent(title, name) {
-            this.data.title = title
-        },
         update(data){
             this.data = data
         },

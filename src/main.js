@@ -3,31 +3,38 @@ import App from './App.vue'
 
 const app = createApp(App)
 
+// Pinia
+import pinia from '@/store/init.js'
+app.use(pinia);
+
 // HTTP
 import http from './pkg/http/http.js'
 app.config.globalProperties.http = http // 注册全局HTTP请求
 
-// Pinia
-import { createPinia } from 'pinia';
-const pinia = createPinia();
-app.use(pinia);
+import request from './pkg/http/request.js'
+app.config.globalProperties.r = request // 注册内敛HTTP函数
 
-// Global store
+// Global store 全局变量
 import { globalStore } from '@/store/global.js'
 const global = globalStore();
 app.config.globalProperties.global = global; // 注册全局store
 
-// Dialog
+// Dialog 内嵌文本的普通Dialog
 import { dialogStore } from '@/store/dialog.js'
 const dialog = dialogStore();
 app.config.globalProperties.dialog = dialog; // 注册全局dialog
 
-// Snackbar
+// Snackbar 底部提示条
 import { snackbarStore } from '@/store/snackbar.js'
 const snackbar = snackbarStore();
 app.config.globalProperties.snackbar = snackbar; // 注册全局snackbar
 
-// Vuetify
+// Popup 内嵌不同Component的Dialog
+import { popupStore } from './store/popup'
+const popup = popupStore();
+app.config.globalProperties.popup = popup;
+
+// Vuetify 设置
 import '@mdi/font/css/materialdesignicons.css'
 import 'vuetify/styles'
 import { createVuetify } from 'vuetify'
@@ -49,9 +56,6 @@ const vuetify = createVuetify({
 })
 app.use(vuetify)
 
-// 注册全局请求封装
-// app.config.globalProperties.request
-
 // Vue-router
 import router from './router'
 router.beforeEach((to, from, next) => {
@@ -65,11 +69,17 @@ router.beforeEach((to, from, next) => {
     next()
 })
 
+// Register path
+import path from '@/router/path.js'
+app.config.globalProperties.path = path;
+
 app.config.globalProperties.jumpView = (value, title = '') => {
     router.push(value)
-    global.setTitle(title)
-    // snackbar.show(title, 1000)
-    dialog.show(title, value)
+    if(title != '') global.setTitle(title)
+}
+
+app.config.globalProperties.settoken = (token = '') => {
+    localStorage.setItem('token', token)
 }
 
 app.use(router)

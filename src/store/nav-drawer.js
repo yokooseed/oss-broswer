@@ -11,7 +11,7 @@ export const navDrawerStore = defineStore('navDrawer', {
                     prependIcon: 'mdi-folder-outline',
                 },
                 active: false,
-                show: true,
+                auth: true,
             },
             {
                 title: 'Bucket列表',
@@ -20,7 +20,7 @@ export const navDrawerStore = defineStore('navDrawer', {
                     prependIcon: 'mdi-list-box-outline',
                 },
                 active: false,
-                show: true,
+                auth: true,
             },
             {
                 title: '权限管理',
@@ -29,7 +29,7 @@ export const navDrawerStore = defineStore('navDrawer', {
                     prependIcon: 'mdi-account-circle-outline',
                 },
                 active: false,
-                show: true,
+                auth: true,
             },
             {
                 title: '文件备份',
@@ -38,25 +38,25 @@ export const navDrawerStore = defineStore('navDrawer', {
                     prependIcon: 'mdi-flag-outline',
                 },
                 active: false,
-                show: true,
+                auth: true,
             },
             {
                 title: '版本控制',
-                value: '/bucket/versioncontrol',
+                value: '/version',
                 props: {
                     prependIcon: 'mdi-tag-outline',
                 },
                 active: false,
-                show: true,
+                auth: true,
             },
             {
                 title: '基本设置',
-                value: '/bucket/basicsetting',
+                value: '/setting',
                 props: {
                     prependIcon: 'mdi-tune',
                 },
                 active: false,
-                show: true,
+                auth: true,
             },
         ]
     }),

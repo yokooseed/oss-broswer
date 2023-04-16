@@ -7,35 +7,26 @@
                 <v-container>
                     <h2>欢迎使用<br>对象存储平台</h2>
                     <v-sheet width="400" class="mx-auto" style="background-color:transparent; margin-top: 20px;">
-                        <v-form fast-fail @submit.prevent="login" >
+                        <v-form fast-fail>
                             <v-text-field
-                                v-model="username"
-                                label="请输入公网/局域网IP"
+                                v-model="email"
+                                label="请输入邮箱"
                                 color="primary"
                                 variant="outlined"
                             ></v-text-field>
                             <v-text-field
                                 v-model="password"
-                                label="请输入手机号"
+                                label="请输入密码"
                                 color="primary"
+                                type="password"
                                 variant="outlined"
                             ></v-text-field>
-                            <v-text-field
-                                v-model="verifycode"
-                                label="请输入验证码"
-                                color="primary"
-                                variant="outlined"
-                            >
-                                <template v-slot:append-inner>
-                                    <v-btn size="large" class="mt-n2" variant="plain" color="primary">获取验证码</v-btn>
-                                </template>
-                            </v-text-field>
-                            <v-btn type="submit" size="large" color="primary" block class="mt-2" @click="onLogin
+                            <v-btn size="large" color="primary" block class="mt-2" @click="onLogin
                             ">登录</v-btn>
                         </v-form>
                         <div class="mt-2">
-                            <v-btn variant="plain">密码登录</v-btn>
-                            <v-btn variant="plain" style="float:right;">立即注册</v-btn>
+                            <!-- <v-btn variant="plain">密码登录</v-btn> -->
+                            <v-btn variant="plain" @click="toRegister">立即注册</v-btn>
                         </div>
                     </v-sheet>
                 </v-container>
@@ -63,14 +54,28 @@
 export default {
     name: 'loginView',
     data: () => ({
-        username: '',
+        email: '',
         password: '',
-        verifycode: ''
+        loading: false,
     }),
     methods: {
-        onLogin(username, password, verifycode){
-            console.log(username, password, verifycode)
+        onLogin(){
+            this.loading = true;
+            setTimeout(() => (this.loading = false), 3000)
+
+            this.r.login(this.email, this.password).then(res => {
+                console.log(res.data)
+                this.settoken(res.data.tokenValue)
+                this.global.user.email = res.data.userMail
+                this.global.user.username = res.data.userName
+                this.snackbar.show("登录成功，返回首页", 3000)
+                this.global.islogin = true
+                this.jumpView(this.path.root)
+            })
         },
+        toRegister() {
+            this.jumpView(this.path.register)
+        }
     }
 }
 </script>

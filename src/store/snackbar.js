@@ -14,7 +14,7 @@ export const snackbarStore = defineStore('snackbar', {
         close(){
             this.data.show = false
         },
-        show(content,btnshow = true, timeout = 1000){
+        show(content, timeout = 1000, btnshow = true){
             this.data.timeout = timeout;
             this.data.content = content;
             this.data.btnshow = btnshow;

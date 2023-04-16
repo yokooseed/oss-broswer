@@ -11,7 +11,6 @@
             hide-details
         ></v-text-field>
 
-        <!-- <v-spacer></v-spacer> -->
         <v-menu>
             <template v-slot:activator="{ props }">
                 <v-btn
@@ -24,17 +23,18 @@
             </template>
             <v-list>
                 <v-list-item
-                    v-for="(item, i) in menuItems"
-                    :key="i"
-                    @click="onClick(item)"
+                    v-for="(item, index) in menuItems"
+                    :key="index"
+                    @click="toPopup(item.title, item.name)"
                 >
                     <v-list-item-title>{{ item.title }}</v-list-item-title>
                 </v-list-item>
             </v-list>
         </v-menu>
 
-        <v-btn variant="text" icon="mdi-swap-vertical" style="margin-right: 20px;"></v-btn>
-        <v-btn variant="text" icon="mdi-dots-vertical" style="margin-right: 20px;"></v-btn>
+        <v-btn variant="elevated" prepend-icon="mdi-swap-vertical" style="margin-right: 20px;" @click="showTransferList">传输列表</v-btn>
+        <!-- TODO: 下面这个不知道是做什么的 -->
+        <!-- <v-btn variant="text" icon="mdi-dots-vertical" style="margin-right: 20px;"></v-btn> -->
 
         <v-btn variant="outlined" color="primary" style="margin-right: 20px;" @click="toRegister">注册</v-btn>
         <v-btn variant="elevated" color="primary" style="margin-right: 20px;" @click="toLogin">登录</v-btn>
@@ -52,18 +52,33 @@
 <script>
 export default {
     data: () => ({
-        menuItems: [
-            { title: '创建Bucket' },
-            { title: '上传文件' },
-        ]
+        menuItems: [],
     }),
+    created() {
+        this.menuItems = this.popup.items // 后期改掉，只剩下创建/上传
+    },
     methods: {
         toRegister() {
-            this.$router.push('/register')
+            if(this.global.islogin == true) {
+                this.dialog.show("访问页面失败", "你已经登录过了, 如需注册账号请先退出登录")
+                return
+            }
+            this.$router.push(this.path.register)
         },
         toLogin() {
-            this.$router.push('/login')
+            if(this.global.islogin == true) {
+                this.dialog.show("访问页面失败", "你已经登录过了, 如需切换账号请先退出登录")
+                return
+            }
+            this.$router.push(this.path.login)
         },
+        toPopup(title, name) {
+            console.log(title, name)
+            this.popup.load(title, name)
+        },
+        showTransferList() {
+            this.popup.loadIndex(4)
+        }
     }
 }
 </script>

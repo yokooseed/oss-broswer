@@ -8,7 +8,7 @@
     >
         <v-card>
             <v-card-title>{{ dialog.data.title }}</v-card-title>
-            <v-card-text>{{ dialog.data.text }}</v-card-text>
+            <v-card-text>{{ dialog.data.content }}</v-card-text>
             <v-card-actions>
                 <v-spacer></v-spacer>
                 <v-btn color="primary" block @click="dialog.close()">确认</v-btn>

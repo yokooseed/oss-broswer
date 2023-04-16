@@ -48,6 +48,10 @@ export default {
     },
     methods: {
         jumpto(value, title, index){
+            if(this.navDrawer.items[index].auth == true && this.global.islogin == false) {
+                this.dialog.show("无权限访问", "访问需要登录,请先登录")
+                return
+            }
             this.jumpView(value, title)
             this.navDrawer.activeIndex = index
         },

@@ -7,15 +7,18 @@ export const globalStore = defineStore('global', {
             {
                 title: '对象存储',
                 disabled: false,
-                // href: 'breadcrumbs_dashboard',
             },
             {
                 title: '概览',
                 disabled: false,
-                // href: '',
             },
         ],
-        fullscreen: false, // 隐藏headbar和sidebar
+        fullscreen: false,  // 隐藏headbar和sidebar
+        islogin: false,     // 是否已经登录
+        user: {
+            email: '',
+            username: '',
+        }
     }),
     getters: {
         isShowBar() {
@@ -32,5 +35,9 @@ export const globalStore = defineStore('global', {
         updateBreadcrumbs(title){
             this.breadcrumbs[1].title = title
         },
+        logout() {
+            this.islogin = false
+            localStorage.removeItem('token')
+        }
     }
 });

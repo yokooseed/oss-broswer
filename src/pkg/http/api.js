@@ -1,5 +1,3 @@
-const host = "127.0.0.1:8080/"
-
 export default {
     user: {
         // 登录
@@ -31,7 +29,7 @@ export default {
         // 获取被删除的桶列表
         getDeletedList: "bucket/delBuckets",
         // 恢复被删除的桶
-        recovery: "bucket/recover",
+        recovery: "bucket/recovery",
         // 添加桶的用户
         addUser: "bucket/user/add",
         // 获取桶的用户列表

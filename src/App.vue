@@ -26,6 +26,7 @@
     </v-main>
     <dialog-view></dialog-view>
     <snackbar></snackbar>
+    <popup></popup>
   </v-app>
 </template>
 
@@ -61,16 +62,18 @@
 <script>
 import navDrawer from '@/components/nav-drawer.vue'
 import headBar from '@/components/head-bar.vue'
-import dialogView from '@/components/dialog.vue'
+import dialog from '@/components/dialog.vue'
 import snackbar from '@/components/snackbar.vue'
+import popup from '@/components/popup.vue'
 
 export default {
   name: 'App',
   components: {
     'navDrawer': navDrawer,
     'headbar': headBar,
-    'dialog-view': dialogView,
+    'dialog-view': dialog,
     'snackbar': snackbar,
+    'popup': popup,
   },
 }
 </script>
