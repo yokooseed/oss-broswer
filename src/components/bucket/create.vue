@@ -94,6 +94,9 @@ export default {
         cancel() {
             this.popup.close()
         },
+    },
+    created() {
+        console.log("bucketCreate created")
     }
 }
 </script>

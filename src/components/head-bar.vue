@@ -36,8 +36,25 @@
         <!-- TODO: 下面这个不知道是做什么的 -->
         <!-- <v-btn variant="text" icon="mdi-dots-vertical" style="margin-right: 20px;"></v-btn> -->
 
-        <v-btn variant="outlined" color="primary" style="margin-right: 20px;" @click="toRegister">注册</v-btn>
-        <v-btn variant="elevated" color="primary" style="margin-right: 20px;" @click="toLogin">登录</v-btn>
+        <div v-if="global.islogin == true">
+            <v-menu>
+                <template v-slot:activator="{ props }">
+                    <v-btn
+                        v-bind="props"
+                        variant="text"
+                        color="primary"
+                        style="margin-right: 20px;"
+                    >{{ global.user.email }}</v-btn>
+                </template>
+                <v-list>
+                    <v-list-item><v-btn variant="outlined" color="primary" style="margin-right: 20px;" @click="logout" block>退出登录</v-btn></v-list-item>
+                </v-list>
+            </v-menu>
+        </div>
+        <div v-else>
+            <v-btn variant="outlined" color="primary" style="margin-right: 20px;" @click="toRegister">注册</v-btn>
+            <v-btn variant="elevated" color="primary" style="margin-right: 20px;" @click="toLogin">登录</v-btn>
+        </div>
     </v-toolbar>
 </v-card>
 </template>
@@ -52,10 +69,13 @@
 <script>
 export default {
     data: () => ({
-        menuItems: [],
+        menuItems: [
+            { title: '创建Bucket', name: 'bucket-create' },
+            { title: '上传文件', name: 'file-upload' },
+        ],
     }),
     created() {
-        this.menuItems = this.popup.items // 后期改掉，只剩下创建/上传
+        // this.menuItems = this.popup.items // 后期改掉，只剩下创建/上传
     },
     methods: {
         toRegister() {
@@ -71,6 +91,14 @@ export default {
                 return
             }
             this.$router.push(this.path.login)
+        },
+        logout() {
+            this.r.logout().then(res => {
+                console.log(res)
+                this.global.logout()
+                this.snackbar.show("退出成功, 返回首页")
+                this.jumpView(this.path.overview, "概览")
+            })
         },
         toPopup(title, name) {
             console.log(title, name)

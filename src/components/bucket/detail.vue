@@ -56,5 +56,15 @@ export default {
         versionControl: false,
         permission: '0',
     }),
+    methods: {
+        loadDetail() {
+            this.r.getFile(this.popup.param.bucketID, this.popup.param.name).then(res => {
+                console.log(res)
+            })
+        }
+    },
+    created() {
+        this.loadDetail()
+    }
 }
 </script>

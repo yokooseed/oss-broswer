@@ -32,6 +32,15 @@ export const navDrawerStore = defineStore('navDrawer', {
                 auth: true,
             },
             {
+                title: '图片处理',
+                value: '/bucket/imgsolve',
+                props: {
+                    prependIcon: 'mdi-check-decagram-outline',
+                },
+                active: false,
+                auth: true,
+            },
+            {
                 title: '文件备份',
                 value: '/bucket/backup',
                 props: {

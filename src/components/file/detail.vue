@@ -53,13 +53,26 @@
 </template>
 
 <script>
+
 export default {
     name: 'bucketDetailView',
     data: () => ({
-        fileName: 'file-name',
-        fileSize: 'file-size',
+        fileName: 'IMG_3301.jpg',
+        fileSize: '80 KB',
         updateTime: '1970-01-01 08:00:00',
-        permission: '0',
+        permission: '私有',
     }),
+    methods: {
+        loadDetail() {
+
+            console.log(this.popup.params)
+            this.r.getFile(this.popup.params.bucketID, this.popup.params.name).then(res => {
+                console.log(res)
+            })
+        }
+    },
+    created() {
+        this.loadDetail()
+    }
 }
 </script>

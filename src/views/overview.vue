@@ -1,5 +1,5 @@
 <template>
-<div class="bg-overview">
+<div class="bg-overview" v-show="global.islogin">
 </div>
 </template>
 

@@ -28,22 +28,18 @@
             <tr color="primary">
                 <th class="text-left">#</th>
                 <th class="text-left">文件名称</th>
-                <th class="text-left">大小</th>
-                <th class="text-left">修改时间</th>
                 <th class="text-center">操作</th>
             </tr>
         </thead>
         <tbody>
             <tr
-                v-for="(item, index) in test"
+                v-for="(item, index) in items"
                 :key="index"
             >
                 <td>{{ index + 1 }}</td>
-                <td>{{ item.name }}</td>
-                <td>{{ item.capacity }}</td>
-                <td>{{ item.updateTime }}</td>
+                <td>{{ item }}</td>
                 <td class="text-center">
-                    <v-btn variant="plain" color="primary" @click="toDetail(item.id, item.name)">详情</v-btn>
+                    <v-btn variant="plain" color="primary" @click="toDetail(index + 1, item)">详情</v-btn>
                 </td>
             </tr>
         </tbody>
@@ -74,12 +70,18 @@ export default {
         },
         toDetail(value, name) {
             console.log(value, name)
+            this.popup.params = {
+                id: value,
+                name: name,
+                bucketID: this.$route.params.id
+            }
             this.popup.loadIndex(6)
         },
         loadFiles() {
             this.r.getBucketFileList(this.$route.params.id).then(res => {
                 console.log(res)
                 this.items = res.data.fileSet
+                if(this.global.flag == true) this.items.push("图片1.jpg")
             })
         },
     },

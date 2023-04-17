@@ -1,12 +1,12 @@
 import axios from 'axios'
 import { snackbarStore } from '@/store/snackbar.js'
 import { globalStore } from '@/store/global.js'
-import { dialogStore } from '@/store/dialog.js'
+// import { dialogStore } from '@/store/dialog.js'
 import pinia from '@/store/init.js'
 
 const snackbar = snackbarStore(pinia)
 const global = globalStore(pinia)
-const dialog = dialogStore(pinia)
+// const dialog = dialogStore(pinia)
 
 const http = axios.create({
     withCredentials: true,  // 允许携带cookie
@@ -86,7 +86,7 @@ const responseSuccess = (response) => {
         return Promise.resolve(result)
     } else if(result.code == 500) {
         snackbar.show("[ERROR] " + result.msg, 3000)
-        dialog.show("用户鉴权异常", "请求出现用户鉴权异常，请重新登录")
+        // dialog.show("用户鉴权异常", "请求出现用户鉴权异常，请重新登录")
         global.logout()
     } else {
         snackbar.show("[ERROR] " + result.msg, 3000)
@@ -123,7 +123,4 @@ export default {
     delete(url) {
         return http.delete(url);
     },
-    test(url) {
-        return http.get(url);
-    }
 }

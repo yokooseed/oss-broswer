@@ -15,6 +15,7 @@ export const globalStore = defineStore('global', {
         ],
         fullscreen: false,  // 隐藏headbar和sidebar
         islogin: false,     // 是否已经登录
+        flag: false,
         user: {
             email: '',
             username: '',

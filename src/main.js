@@ -19,6 +19,11 @@ import { globalStore } from '@/store/global.js'
 const global = globalStore();
 app.config.globalProperties.global = global; // 注册全局store
 
+// Transfer 文件传输
+import { tranferStore } from './store/transfer'
+const transfer = tranferStore();
+app.config.globalProperties.transfer = transfer;
+
 // Dialog 内嵌文本的普通Dialog
 import { dialogStore } from '@/store/dialog.js'
 const dialog = dialogStore();

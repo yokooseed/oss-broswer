@@ -75,7 +75,7 @@ export default {
     uploadSingle(file = '', originMd5 = '', bucketId = '', isZip = '') {
         return http.post(api.file.uploadSingle, { file, originMd5, bucketId, isZip })
     },
-    getfile(bucketId = '', fileName = '') {
+    getFile(bucketId = '', fileName = '') {
         return http.get(api.file.get, { bucketId, fileName })
     },
     getBucketFileList(bucketId = '') {

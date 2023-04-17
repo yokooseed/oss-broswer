@@ -4,12 +4,12 @@
         <v-form fast-fail>
             <v-row>
                 <v-col cols="3">
-                    <v-label class="pa-2 ma-2">账号ID</v-label>
+                    <v-label class="pa-2 ma-2">邮箱</v-label>
                 </v-col>
                 <v-col cols="9">
                     <v-text-field
                         v-model="account"
-                        label="请输入账号ID"
+                        label="请输入用户邮箱"
                         color="primary"
                         variant="solo"
                     ></v-text-field>
@@ -27,9 +27,9 @@
                         shaped
                         mandatory
                     >
-                        <v-btn value="0">只读</v-btn>
-                        <v-btn value="1">只写</v-btn>
-                        <v-btn value="2">完全控制</v-btn>
+                        <v-btn value="1">只读</v-btn>
+                        <v-btn value="2">读写</v-btn>
+                        <v-btn value="3">禁止</v-btn>
                     </v-btn-toggle>
                 </v-col>
             </v-row>
@@ -40,7 +40,7 @@
                     <v-spacer></v-spacer>
                 </v-col>
                 <v-col cols="4">
-                    <v-btn color="primary" @click="createBucket" block>添加</v-btn>
+                    <v-btn color="primary" @click="addUser" block>添加</v-btn>
                 </v-col>
                 <v-col cols="2">
                     <v-spacer></v-spacer>
@@ -60,13 +60,22 @@ export default {
     data: () => ({
         account: '',
         versionControl: false,
-        permission: '0',
+        permission: '1',
     }),
     methods: {
-        createBucket() {
+        transPermission(value = '0') {
+            if(value == '1') return '只读'
+            if(value == '2') return '读写'
+            if(value == '3') return '禁止'
+            return '禁止'
         },
         cancel() {
             this.popup.loadIndex(5)
+        },
+        addUser() {
+            this.r.addBucketUser(this.popup.params.id, this.account, this.permission).then(res => {
+                console.log(res)
+            })
         },
     }
 }

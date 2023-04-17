@@ -17,12 +17,12 @@
                         <v-btn value="0">指定目录</v-btn>
                         <v-btn value="1">当前目录</v-btn>
                     </v-btn-toggle>
-                    <v-label>/storage/emulated/Download</v-label>
+                    <!-- <v-label>/storage/emulated/Download</v-label> -->
                 </v-col>
             </v-row>
             <v-row>
                 <v-col cols="3">
-                    <v-label class="pa-2 ma-2">读写权限</v-label>  
+                    <v-label class="pa-2 ma-2">读写权限</v-label>
                 </v-col>
                 <v-col cols="9">
                     <v-btn-toggle
@@ -50,6 +50,7 @@
                         multiple
                         label="请选择你需要上传的文件，支持多选"
                         v-model="files"
+                        variant="underlined"
                     >
                         <template v-slot:selection="{ fileNames }">
                             <template v-for="fileName in fileNames" :key="fileName">
@@ -58,6 +59,9 @@
                         </template>
                     </v-file-input>
                 </v-col>
+            </v-row>
+            <v-row>
+                <!-- <v-label class="pa-2 ma-2">传输进度： {{ transfer.progress }}</v-label> -->
             </v-row>
         </v-form>
         <div class="mt-2">
@@ -81,10 +85,12 @@
 </template>
 
 <script>
+
 export default {
     name: 'fileUploadView',
     data: () => ({
         bucket: '',
+        bucketID: 27,
         versionControl: false,
         permission: '0',
         dirname: '0',
@@ -93,7 +99,20 @@ export default {
     methods: {
         upload() {
             console.log(this.files[0])
-            console.log(this.files.length)
+
+            this.transfer.calmd5(this.files[0], (md5) => {
+                console.log(md5)
+            })
+
+            this.transfer.startUpload(this.files[0], this.bucketID)
+            .then(res => {
+                this.dialog.show("传输文件", "传输文件成功, 刷新查看Bucket即可")
+                this.global.flag = true
+                console.log(res)
+            })
+            .catch(error => {
+                console.log(error)
+            })
         },
         cancel() {
             this.popup.close()

@@ -1,6 +1,6 @@
 <template>
 <v-container>
-    <v-sheet width="400" class="mx-auto">
+    <v-sheet width="700" class="mx-auto">
         <v-form fast-fail>
             <v-row>
                 <v-col cols="3">
@@ -22,9 +22,9 @@
                         shaped
                         mandatory
                     >
-                        <v-btn value="0">私有</v-btn>
-                        <v-btn value="1">公共读</v-btn>
-                        <v-btn value="2">公共读写</v-btn>
+                        <v-btn value="1">只读</v-btn>
+                        <v-btn value="2">读写</v-btn>
+                        <v-btn value="3">私有</v-btn>
                     </v-btn-toggle>
                 </v-col>
             </v-row>
@@ -32,7 +32,7 @@
                 <v-col cols="3">
                     <v-label class="pa-2 ma-2">用户权限</v-label>
                 </v-col>
-                <v-col cols="9">
+                <v-col cols="auto">
                     <v-btn @click="addUser" color="primary">添加用户</v-btn>
                     <v-table
                             fixed-header
@@ -43,6 +43,7 @@
                                 <tr color="primary">
                                     <th class="text-left">#</th>
                                     <th class="text-left">用户ID</th>
+                                    <th class="text-left">用户名</th>
                                     <th class="text-left">用户权限</th>
                                 </tr>
                             </thead>
@@ -52,8 +53,9 @@
                                     :key="index"
                                 >
                                     <td>{{ index + 1 }}</td>
-                                    <td>{{ item.id }}</td>
-                                    <td>{{ transPermission(item.permission) }}</td>
+                                    <td>{{ item.user_id }}</td>
+                                    <td>{{ item.name }}</td>
+                                    <td>{{ transPermission(item.type) }}</td>
                                 </tr>
                             </tbody>
                         </v-table>
@@ -84,35 +86,23 @@
 export default {
     name: 'updatePermissionView',
     data: () => ({
-        bucketName: 'bucket-name',
-        permission: '0',
-        userList: [
-            {
-                id: "1015901853",
-                permission: '0',
-            },
-            {
-                id: "1015901853",
-                permission: '1',
-            },
-            {
-                id: "1015901853",
-                permission: '2',
-            },
-            {
-                id: "1015901853",
-                permission: '3',
-            },
-        ]
+        bucketName: '',
+        bucketID: '',
+        permission: '1',
+        userList: [],
     }),
     methods: {
         updateBucket() {
-            console.log("updateBucket")
+            this.r.updateBucketAuth(this.bucketID, this.permission).then(res => {
+                console.log(res)
+                this.popup.close()
+            })
         },
         transPermission(value = '0') {
-            if(value == '0') return '只读'
-            if(value == '1') return '只写'
-            return '完全控制'
+            if(value == '1') return '只读'
+            if(value == '2') return '读写'
+            if(value == '3') return '禁止'
+            return '禁止'
         },
         addUser() {
             this.popup.close()
@@ -121,6 +111,18 @@ export default {
         cancel() {
             this.popup.close()
         },
+        getUserList() {
+            this.r.getBucketUserList(this.bucketID).then(res => {
+                console.log(res)
+                this.userList = res.data.userList
+            })
+        },
+    },
+    created() {
+        console.log(this.popup.params)
+        this.bucketID = this.popup.params.id
+        this.bucketName = this.popup.params.name
+        this.getUserList()
     }
 }
 </script>

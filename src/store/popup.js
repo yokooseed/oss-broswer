@@ -15,7 +15,8 @@ export const popupStore = defineStore('popup', {
             { title: '传输列表', name: 'transfer-list' },
             { title: '更新Bucket权限', name: 'update-permission' },
             { title: '文件详情', name: 'file-detail' },
-        ]
+        ],
+        params: {},
     }),
     actions: {
         close(){
@@ -34,5 +35,8 @@ export const popupStore = defineStore('popup', {
         update(data){
             this.data = data
         },
+        setparams(params){
+            this.params = params
+        }
     }
 })
