@@ -45,6 +45,7 @@
     transition: all 0.2s cubic-bezier(1, 0.6, 0.6, 1);
 }
 
+
 .router-view {
     background-color: rgb(231, 235, 246);
     background-size: cover;
