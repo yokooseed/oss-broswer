@@ -90,3 +90,4 @@ app.config.globalProperties.settoken = (token = '') => {
 app.use(router)
 
 app.mount('#app')
+
