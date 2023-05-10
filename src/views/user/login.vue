@@ -21,7 +21,7 @@
                                 type="password"
                                 variant="outlined"
                             ></v-text-field>
-                            <v-btn size="large" color="primary" block class="mt-2" @click="onLogin
+                            <v-btn size="large" color="primary" block class="mt-2" @click="test
                             ">登录</v-btn>
                         </v-form>
                         <div class="mt-2">
@@ -59,7 +59,10 @@ export default {
         loading: false,
     }),
     methods: {
-        onLogin(){
+        test() {
+            this.create.snackbar("test")
+        },
+        onLogin() {
             this.loading = true;
             setTimeout(() => (this.loading = false), 3000)
 

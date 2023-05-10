@@ -39,6 +39,10 @@ import { popupStore } from './store/popup'
 const popup = popupStore();
 app.config.globalProperties.popup = popup;
 
+import dynamicCreate from './pkg/create/dynamic-create.js'
+// const dynamicCreate = daynamicCreate();
+app.config.globalProperties.create = dynamicCreate;
+
 // Vuetify 设置
 import '@mdi/font/css/materialdesignicons.css'
 import 'vuetify/styles'

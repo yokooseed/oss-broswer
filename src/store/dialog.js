@@ -1,4 +1,5 @@
 import { defineStore } from "pinia";
+import { Teleport } from "vue";
 
 export const dialogStore = defineStore('dialog', {
     state: () => ({
@@ -35,3 +36,6 @@ export const dialogStore = defineStore('dialog', {
         }
     }
 })
+
+
+Teleport
