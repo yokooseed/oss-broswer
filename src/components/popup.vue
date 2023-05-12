@@ -35,7 +35,7 @@ export default {
         'bucket-create': bucketCreate,
         'file-upload': fileUpload,
         'bucket-detail': bucketDetail,
-        'file-detail': fileDetail, 
+        'file-detail': fileDetail,
     },
     methods: {
         close() {
