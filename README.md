@@ -1,5 +1,7 @@
 # oss-browser
 
+a simply frontends serve for oss
+
 ## Project setup
 ```
 npm install
